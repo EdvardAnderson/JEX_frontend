@@ -1,8 +1,13 @@
 <div style="width: 400px; margin: auto" class="companies">
-  <p>list-companies works!</p>
+  <p>Companies</p>
   <div *ngIf="companies" class="scroll-container">
     <ul>
-      <li *ngFor="let item of companies">{{ item.name }}</li>
+      <li *ngFor="let item of companies">{{ item.name }} 
+        <i  (click)="alertIt(item.id)" class="fas fa-solid fa-plus" (routerLink)="['items', item.id]">details</i>
+        <a [routerLink]="['items', item.id]">details</a>
+        <router-outlet name="CompanyDetailsComponent"></router-outlet>
+      </li>
+      
     </ul>
   </div>
 </div>

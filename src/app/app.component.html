@@ -42,7 +42,7 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    background-color: steelblue;
     color: white;
     font-weight: 600;
   }
@@ -341,7 +341,21 @@
       </g>
     </svg>
 
-    <span>{{ title }} app is running!</span>
+    <!-- <span>{{ title }} app is running!</span> -->
+    <span><nav class="navbar navbar-expand navbar-dark bg-dark">
+      <a href="#" class="navbar-brand">JobBoard</a>
+      <div class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a routerLink="companies" class="nav-link">Companies</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="addCompany" class="nav-link">Add company</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="addJobOpening" class="nav-link">Add jobopening</a>
+        </li>
+      </div>
+    </nav></span>
 
     <svg id="rocket-smoke" xmlns="http://www.w3.org/2000/svg" width="516.119" height="1083.632" viewBox="0 0 516.119 1083.632">
       <title>Rocket Ship Smoke</title>

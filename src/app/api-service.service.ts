@@ -21,5 +21,10 @@ export class ApiService {
     return this.http.post(this.baseUrl + 'companies', data);
   }
 
+  createJobOpening(data: any) : Observable<any> {
+    console.log('createJobOpening',data);
+    return this.http.post(this.baseUrl + 'companies/jobs', data);
+  }
+
   // Add methods for POST, PUT, DELETE as needed
 }

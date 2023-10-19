@@ -16,6 +16,9 @@ export class ListCompaniesComponent {
   ngOnInit() {
     this.getCompanies();
   }
+  alertIt(itemId: string) {
+    alert(`Item ID: ${itemId}`);
+  }
 
   getCompanies() {
     console.log('fetching companies..');
