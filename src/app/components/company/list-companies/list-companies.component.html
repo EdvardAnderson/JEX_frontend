@@ -1,0 +1,8 @@
+<div style="width: 400px; margin: auto" class="companies">
+  <p>list-companies works!</p>
+  <div *ngIf="companies" class="scroll-container">
+    <ul>
+      <li *ngFor="let item of companies">{{ item.name }}</li>
+    </ul>
+  </div>
+</div>

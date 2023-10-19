@@ -1,0 +1,27 @@
+p{
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: steelblue;
+    color: aliceblue;
+}
+
+.companies{
+    padding: 10px 20px 20px 10px;
+    background-color: azure;
+    border: 2px black solid;
+    border-radius: 5%;
+}
+li{
+    padding: 5px;
+    margin: 5px;
+    border: 2px aliceblue solid;
+    background-color: steelblue;
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.scroll-container {
+    max-height: 400px; /* Set a maximum height for scrolling */
+    overflow-y: scroll; /* Enable vertical scrolling */
+  }
