@@ -1,4 +1,4 @@
-nav{
+nav nav-link{
     background-color: steelblue;
     color: aliceblue;
 
@@ -6,3 +6,4 @@ nav{
 a.nav-link{
     color:aliceblue;
 }
+

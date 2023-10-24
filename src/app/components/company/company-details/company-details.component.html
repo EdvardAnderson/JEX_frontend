@@ -1,1 +1,12 @@
-<p>company-details works!</p>
+<div style="width: 400px; margin: auto" class="companies">
+    <div *ngIf="jobOpenings" class="scroll-container">
+        <ul>
+          <li *ngFor="let item of jobOpenings">
+            <p>Job title: {{ item.title }} </p>
+            <p>description:</p>
+            <span>{{item.description}}</span>
+          </li>
+          
+        </ul>
+      </div>
+</div>

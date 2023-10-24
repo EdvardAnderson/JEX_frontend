@@ -1,0 +1,15 @@
+li, i{
+    padding: 5px;
+    margin: 5px;
+    border: 2px aliceblue solid;
+    display: block;
+    background-color: steelblue;
+    color: aliceblue;
+    font-weight: bold;
+
+}
+
+.scroll-container {
+    max-height: 400px; /* Set a maximum height for scrolling */
+    overflow-y: scroll; /* Enable vertical scrolling */
+  }

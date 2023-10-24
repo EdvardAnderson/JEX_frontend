@@ -7,6 +7,7 @@ import { Company } from 'src/models/Company';
   templateUrl: './add-jobopening.component.html',
   styleUrls: ['./add-jobopening.component.css']
 })
+
 export class AddJobopeningComponent {
 
   companies: Company[] = []
@@ -24,39 +25,29 @@ export class AddJobopeningComponent {
   }
 
   submitted = false;
-  // onSubmit() {
-  //   console.log('Sbmitted');
-  //   this.apiService.createCompany(this.company);
-  //   this.submitted = true; }
 
   //DI with api service
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.getCompanies();
-  }
-
-  getCompanies() {
-    console.log('fetching companies..');
-    this.apiService.getCompanies().subscribe((response) => {
-      this.companies = response as any;
-    })
+    console.log('-- add jobopening: getCompanies --');
+    this.apiService.getAllCompanies().subscribe(
+      {
+        next: (data: any) => this.companies = data['$values'],
+        error: (e) => console.error('Error:', e),
+        complete: () => console.info('GetCompanies call completed.')
+      });
   }
 
   createJobOpening(): void {
     console.log(this.company);
-    const data = {
-
-    };
     console.log('incoming data', this.company);
     this.apiService.createJobOpening(this.jobOpening)
       .subscribe(
-        response => {
-          console.log(response);
-          this.submitted = true;
-        },
-        error => {
-          console.log('ERROR TERROR', error);
+        {
+          next: (data) => this.submitted = true,
+          error:(error) => console.error('Error creating a job opening:', error),
+          complete:() => console.log(`Creating job for company  completed`)
         });
   }
 

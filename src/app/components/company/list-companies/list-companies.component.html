@@ -2,12 +2,13 @@
   <p>Companies</p>
   <div *ngIf="companies" class="scroll-container">
     <ul>
-      <li *ngFor="let item of companies">{{ item.name }} 
-        <i  (click)="alertIt(item.id)" class="fas fa-solid fa-plus" (routerLink)="['items', item.id]">details</i>
-        <a [routerLink]="['items', item.id]">details</a>
-        <router-outlet name="CompanyDetailsComponent"></router-outlet>
+      <li *ngFor="let item of companies">Company: {{ item.name }}
+        <i class="fas fa-solid fa-plus" (click)="showCompanyDetails(item)">jobs</i>
       </li>
       
     </ul>
   </div>
+</div>
+<div>
+  <router-outlet></router-outlet>
 </div>

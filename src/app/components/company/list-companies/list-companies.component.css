@@ -8,8 +8,7 @@ p{
 
 .companies{
     padding: 10px 20px 20px 10px;
-    background-color: azure;
-    border: 2px black solid;
+    
     border-radius: 5%;
 }
 li, i{
