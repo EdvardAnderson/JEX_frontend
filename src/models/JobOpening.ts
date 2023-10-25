@@ -3,6 +3,6 @@ export class JobOpening {
         public id: string,
         public title: string,
         public description: string,
-        
+        public isActive:boolean
     ) { }
 }

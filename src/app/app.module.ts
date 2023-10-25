@@ -10,6 +10,8 @@ import { ListCompaniesComponent } from './components/company/list-companies/list
 import { AddCompanyComponent } from './components/company/add-company/add-company.component';
 import { CompanyDetailsComponent } from './components/company/company-details/company-details.component';
 import { AddJobopeningComponent } from './components/company/add-jobopening/add-jobopening.component';
+import { ManageJobOpeningComponent } from './components/jobopenings/manage/manage.component';
+import { ManageCompanyComponent } from './components/company/manage/manage.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { AddJobopeningComponent } from './components/company/add-jobopening/add-
     ListCompaniesComponent,
     AddCompanyComponent,
     CompanyDetailsComponent,
-    AddJobopeningComponent
+    AddJobopeningComponent,
+    ManageJobOpeningComponent,
+    ManageCompanyComponent
   ],
   imports: [
     FormsModule,

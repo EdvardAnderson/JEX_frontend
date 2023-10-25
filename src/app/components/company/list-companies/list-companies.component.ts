@@ -17,7 +17,7 @@ export class ListCompaniesComponent {
   ngOnInit() {
     this.apiService.getCompaniesWithJobOpenings().subscribe(
       {
-        next: (data: any) => this.companies = data['$values'],
+        next: (data: Company[]) =>  {console.log(data); this.companies = data}, //(this.companies = data),
         error: (e) => console.error('Error:', e),
         complete: () => console.info('GetCompanies with jobopenings call completed.')
       });

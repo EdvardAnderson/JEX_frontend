@@ -21,7 +21,7 @@ export class AddJobopeningComponent {
     companyId: '',
     title: '',
     description: '',
-    active: false
+    isActive: null
   }
 
   submitted = false;
@@ -33,7 +33,7 @@ export class AddJobopeningComponent {
     console.log('-- add jobopening: getCompanies --');
     this.apiService.getAllCompanies().subscribe(
       {
-        next: (data: any) => this.companies = data['$values'],
+        next: (data: Company[]) => {this.companies = data; console.log(data)},
         error: (e) => console.error('Error:', e),
         complete: () => console.info('GetCompanies call completed.')
       });

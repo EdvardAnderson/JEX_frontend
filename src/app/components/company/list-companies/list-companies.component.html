@@ -2,7 +2,7 @@
   <p>Companies</p>
   <div *ngIf="companies" class="scroll-container">
     <ul>
-      <li *ngFor="let item of companies">Company: {{ item.name }}
+      <li *ngFor="let item of companies">Company: {{ item |json }}
         <i class="fas fa-solid fa-plus" (click)="showCompanyDetails(item)">jobs</i>
       </li>
       

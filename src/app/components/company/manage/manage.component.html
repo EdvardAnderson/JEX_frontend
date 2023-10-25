@@ -1,0 +1,17 @@
+<div style="width: 400px; margin: auto" class="companies">
+    <p>Manage companies</p>
+    <div *ngIf="companies" class="scroll-container">
+      <ul>
+        <li *ngFor="let item of companies">Company: {{ item | json }}
+          <i class="fas fa-solid fa-plus" >jobs</i>
+          <div>{{ item.jobOpenings  | json}}</div>
+          <div *ngFor="let job of item.jobOpenings">{{job | json}}</div>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+  
