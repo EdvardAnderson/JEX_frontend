@@ -7,7 +7,7 @@
         <div class="form-group">
             <label for="company">Select a company to assign the job opening to</label>
             <select class="form-control" id="company" name="company" required  [(ngModel)]="jobOpening.companyId">
-              <option *ngFor="let company of companies" [ngValue]="company.id">{{company.name}}</option>
+              <option *ngFor="let company of companies" [ngValue]="company.Id">{{company.Name}}</option>
             </select>
           </div>
 

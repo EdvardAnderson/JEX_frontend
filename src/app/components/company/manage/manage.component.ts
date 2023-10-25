@@ -15,7 +15,7 @@ export class ManageCompanyComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getAllCompanies().subscribe(
       {
-        next: (data: any) => this.companies = data['$values'],
+        next: (data: Company[]) => this.companies = data,
         error: (e) => console.error('Error:', e),
         complete: () => console.info('GetAllCompanies call completed.')
       });

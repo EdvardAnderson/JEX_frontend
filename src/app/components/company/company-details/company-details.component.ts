@@ -23,7 +23,7 @@ export class CompanyDetailsComponent implements OnInit{
     
     // Fetch the company details including job openings using the ID
     this.apiService.getCompanyById(companyId).subscribe({
-      next:(data:any) => this.jobOpenings = data['jobOpenings']['$values']
+      next:(data:any) => this.jobOpenings = data.JobOpenings
     });
   }
 }

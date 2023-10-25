@@ -2,13 +2,24 @@
   <p>Companies</p>
   <div *ngIf="companies" class="scroll-container">
     <ul>
-      <li *ngFor="let item of companies">Company: {{ item |json }}
-        <i class="fas fa-solid fa-plus" (click)="showCompanyDetails(item)">jobs</i>
+      <li *ngFor="let company of companies">
+        <!-- Display company information -->
+        <p>company: {{ company.Name }}</p>
+        <p>Address: {{ company.Address || "Address N/A" }}</p>
+
+        <!-- Job openings for the current company -->
+        <ul>
+          <li *ngFor="let jobOpening of company.JobOpenings">
+            <h4>{{ jobOpening.Title }}</h4>
+            <p>Description: {{ jobOpening.Description }}</p>
+            <p>Active: {{ jobOpening.IsActive ? "Yes" : "No" }}</p>
+          </li>
+        </ul>
       </li>
-      
     </ul>
   </div>
-</div>
-<div>
-  <router-outlet></router-outlet>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
 </div>

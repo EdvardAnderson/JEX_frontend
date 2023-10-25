@@ -4,8 +4,8 @@
       <ul>
         <li *ngFor="let item of companies">Company: {{ item | json }}
           <i class="fas fa-solid fa-plus" >jobs</i>
-          <div>{{ item.jobOpenings  | json}}</div>
-          <div *ngFor="let job of item.jobOpenings">{{job | json}}</div>
+          <div>{{ item.JobOpenings  | json}}</div>
+          <div *ngFor="let job of item.JobOpenings">{{job | json}}</div>
         </li>
         
       </ul>

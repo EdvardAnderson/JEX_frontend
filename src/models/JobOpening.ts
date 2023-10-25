@@ -1,8 +1,8 @@
 export class JobOpening {
     constructor(
-        public id: string,
-        public title: string,
-        public description: string,
-        public isActive:boolean
+        public Id: string,
+        public Title: string,
+        public Description: string,
+        public IsActive:boolean
     ) { }
 }

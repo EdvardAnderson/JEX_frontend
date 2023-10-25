@@ -17,14 +17,15 @@ export class ListCompaniesComponent {
   ngOnInit() {
     this.apiService.getCompaniesWithJobOpenings().subscribe(
       {
-        next: (data: Company[]) =>  {console.log(data); this.companies = data}, //(this.companies = data),
+        next: (data: Company[]) =>  {console.log('-- getCompaniesWithJobOpenings --',data); this.companies = data}, //(this.companies = data),
         error: (e) => console.error('Error:', e),
         complete: () => console.info('GetCompanies with jobopenings call completed.')
       });
   }
 
   showCompanyDetails(company: Company) {
-    this.router.navigate(['/company', company.id]);
+    console.log('-- showCompanyDetails --', company);
+    this.router.navigate(['/company', company.Id]);
   }
 
   alertIt(itemId: string) {
