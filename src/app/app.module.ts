@@ -10,19 +10,17 @@ import { ListCompaniesComponent } from './components/company/list-companies/list
 import { AddCompanyComponent } from './components/company/add-company/add-company.component';
 import { CompanyDetailsComponent } from './components/company/company-details/company-details.component';
 import { AddJobopeningComponent } from './components/company/add-jobopening/add-jobopening.component';
-import { ManageJobOpeningComponent } from './components/jobopenings/manage/manage.component';
 import { ManageCompanyComponent } from './components/company/manage/manage.component';
 import { CompanyEditComponent } from './components/company/company-edit/company-edit.component';
 import { EditJobopeningComponent } from './components/jobopenings/edit-jobopening/edit-jobopening.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ 
     AppComponent,
     ListCompaniesComponent,
     AddCompanyComponent,
     CompanyDetailsComponent,
     AddJobopeningComponent,
-    ManageJobOpeningComponent,
     ManageCompanyComponent,
     CompanyEditComponent,
     EditJobopeningComponent

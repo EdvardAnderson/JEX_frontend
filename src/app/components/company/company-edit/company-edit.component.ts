@@ -2,8 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Company } from 'src/models/Company';
 import { ApiService } from 'src/app/api-service.service';
-import { FormsModule } from '@angular/forms';
-
 
 @Component({
   selector: 'app-company-edit',
@@ -26,5 +24,6 @@ import { FormsModule } from '@angular/forms';
   
     onSubmit() {
       this.apiService.updateCompany(this.company).subscribe((data: any)=> console.log('update result:', data));
+      
     }
 }

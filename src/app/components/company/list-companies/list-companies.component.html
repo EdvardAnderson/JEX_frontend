@@ -3,6 +3,7 @@
   <div *ngIf="companies" class="scroll-container">
     <ul>
       <li *ngFor="let company of companies">
+        
         <!-- Display company information -->
         <p>{{ company.Name }}</p>
         <p>Address: {{ company.Address || "Address N/A" }}</p>

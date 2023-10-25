@@ -1,4 +1,9 @@
+a:link, :hover, :active, :visited{
+    color:aliceblue;
+}
+
 p{
+      display:block;
     padding: 5px;
     font-size: 14px;
     font-weight: bold;

@@ -32,10 +32,6 @@ export class ListCompaniesComponent {
     company.expanded = !company.expanded;
   }
 
-  editCompany(company: Company): void {
-    // Implement the logic for editing the company here.
-  }
-
   alertIt(itemId: string) {
     alert(`Item ID: ${itemId}`);
   }
