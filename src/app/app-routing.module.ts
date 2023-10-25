@@ -6,6 +6,7 @@ import { CompanyDetailsComponent } from './components/company/company-details/co
 import { AddJobopeningComponent } from './components/company/add-jobopening/add-jobopening.component';
 import { ManageJobOpeningComponent } from './components/jobopenings/manage/manage.component';
 import { ManageCompanyComponent } from './components/company/manage/manage.component';
+import { CompanyEditComponent } from './components/company/company-edit/company-edit.component';
 
 const routes: Routes = [
   { path: 'companies', component: ListCompaniesComponent },
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'manageJobOpenings', component:  ManageJobOpeningComponent},
   { path: 'manageCompanies', component: ManageCompanyComponent },
   { path: 'company/:id', component: CompanyDetailsComponent },
+  { path: 'companies/edit/:id', component: CompanyEditComponent },
 
 ];
 

@@ -15,10 +15,15 @@ export class ManageCompanyComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.getAllCompanies().subscribe(
       {
-        next: (data: Company[]) => this.companies = data,
+        next: (data: Company[]) => {console.log('-- getAllCompanies --',data); this.companies = data},
         error: (e) => console.error('Error:', e),
         complete: () => console.info('GetAllCompanies call completed.')
       });
   }
+
+  toggleCompanyDetails(company: Company): void {
+    company.expanded = !company.expanded;
+  }
+
 
 }

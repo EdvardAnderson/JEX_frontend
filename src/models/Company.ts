@@ -6,5 +6,9 @@ export class Company {
         public Name: string,
         public Address: string,
         public JobOpenings: JobOpening[]
-    ) { }
+    ) {
+        this.expanded = false; // Initialize the expanded state as false
+    }
+
+    expanded: boolean;
 }

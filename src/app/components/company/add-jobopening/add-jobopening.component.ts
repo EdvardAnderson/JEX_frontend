@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/api-service.service';
 import { Company } from 'src/models/Company';
+import { JobOpening } from 'src/models/JobOpening';
 
 @Component({
   selector: 'app-add-jobopening',
@@ -12,16 +13,16 @@ export class AddJobopeningComponent {
 
   companies: Company[] = []
   company = {
-    name: '',
-    address: '',
-    jobOpenings: []
+    Name: '',
+    Address: '',
+    JobOpenings: [] = []
   }
 
   jobOpening = {
-    companyId: '',
-    title: '',
-    description: '',
-    isActive: null
+    CompanyId: '',
+    Title: '',
+    Description: '',
+    IsActive: null
   }
 
   submitted = false;

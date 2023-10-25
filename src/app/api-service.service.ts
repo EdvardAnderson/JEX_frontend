@@ -15,7 +15,7 @@ export class ApiService {
 
   getAllCompanies(): Observable<Company[]> {
     console.log('-- api service: getCompanies --');
-    let companies =  this.http.get<Company[]>(this.baseUrl + 'companies');
+    const companies =  this.http.get<Company[]>(this.baseUrl + 'companies');
     console.log('companies:', companies);
     return this.http.get<Company[]>(this.baseUrl + 'companies');
   }
@@ -26,13 +26,19 @@ export class ApiService {
     return this.http.get<Company[]>(this.baseUrl + 'companies/jobs');
   }
 
-  getCompanyById(companyId: string | null) {
-    return this.http.get<Company[]>(this.baseUrl + 'companies/' + companyId);
+  getCompanyById(companyId: string) {
+    return this.http.get<Company>(this.baseUrl + 'companies/' + companyId);
   }
 
   createCompany(data: any): Observable<any> {
     console.log('createCompany', data);
     return this.http.post(this.baseUrl + 'companies', data);
+ 
+  }
+
+ updateCompany(data: Company): Observable<any> {
+    console.log('updateCompany', data);
+    return this.http.put(this.baseUrl + 'companies/edit', data.Id);
   }
 
   createJobOpening(data: any): Observable<any> {

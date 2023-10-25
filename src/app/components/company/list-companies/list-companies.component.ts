@@ -28,6 +28,14 @@ export class ListCompaniesComponent {
     this.router.navigate(['/company', company.Id]);
   }
 
+  toggleCompanyDetails(company: Company): void {
+    company.expanded = !company.expanded;
+  }
+
+  editCompany(company: Company): void {
+    // Implement the logic for editing the company here.
+  }
+
   alertIt(itemId: string) {
     alert(`Item ID: ${itemId}`);
   }

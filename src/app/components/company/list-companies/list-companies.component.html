@@ -4,10 +4,11 @@
     <ul>
       <li *ngFor="let company of companies">
         <!-- Display company information -->
-        <p>company: {{ company.Name }}</p>
+        <p>{{ company.Name }}</p>
         <p>Address: {{ company.Address || "Address N/A" }}</p>
-
+        <i  (click)="toggleCompanyDetails(company)" [class]="company.expanded ? 'fas fa-minus' : 'fas fa-plus'">Job openings</i>
         <!-- Job openings for the current company -->
+        <div class="company-details" *ngIf="company.expanded">
         <ul>
           <li *ngFor="let jobOpening of company.JobOpenings">
             <h4>{{ jobOpening.Title }}</h4>
@@ -15,11 +16,8 @@
             <p>Active: {{ jobOpening.IsActive ? "Yes" : "No" }}</p>
           </li>
         </ul>
+      </div>
       </li>
     </ul>
-  </div>
-
-  <div>
-    <router-outlet></router-outlet>
   </div>
 </div>
