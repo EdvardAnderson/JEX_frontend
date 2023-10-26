@@ -57,7 +57,7 @@ export class AddJobopeningComponent {
     }, 1000)
     // Navigate to your desired route after the delay
     this.router.navigate(['/manageCompanies']).then(() => {
-      //window.location.reload();
+      window.location.reload();
     });;;
 
 
