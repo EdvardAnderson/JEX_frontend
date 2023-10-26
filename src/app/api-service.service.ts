@@ -47,11 +47,22 @@ export class ApiService {
     return this.http.put<Company>(`${this.baseUrl}companies/edit/${data.Id}`, data);
     //return this.http.put(this.baseUrl + 'companies/edit', data.Id);
   }
+ 
+ deleteCompany(id: any): Observable<any> {
+    console.log('deleteCompany', id);
+    return this.http.delete<Company>(`${this.baseUrl}companies/${id}`);
+    //return this.http.put(this.baseUrl + 'companies/edit', data.Id);
+  }
 
   updateJobOpening(data: JobOpening): Observable<any> {
     console.log('updateJobopening', data);
     return this.http.put<JobOpening>(`${this.baseUrl}companies/jobopenings/${data.Id}`, data);
     //return this.http.put(this.baseUrl + 'companies/edit', data.Id);
+  }
+
+  deleteJobOpening(id: any): Observable<any> {
+    console.log('deleteJobOpening', id);
+    return this.http.delete<JobOpening>(`${this.baseUrl}companies/jobopenings/${id}`);
   }
 
   createJobOpening(data: any): Observable<any> {

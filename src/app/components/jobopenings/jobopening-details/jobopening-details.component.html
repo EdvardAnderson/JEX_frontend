@@ -1,0 +1,20 @@
+<div>
+  <ul>
+    <li *ngFor="let jobOpening of companyJobs.JobOpenings">
+      <h4>{{ jobOpening.Title }}</h4>
+      <p>{{ jobOpening.Description }}</p>
+      <p>
+        Active:
+        <i
+          [class]="jobOpening.IsActive ? 'fa-solid fa-check' : 'fa-solid fa-x'"
+        ></i>
+      </p>
+      <div *ngIf="editMode">
+        <div class="button-group">
+          <button (click)="editJobOpening(jobOpening)">Edit</button>
+          <button (click)="deleteJobOpening(jobOpening.Id)">Delete job</button>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>

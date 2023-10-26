@@ -3,61 +3,8 @@
   <div *ngIf="companies" class="scroll-container">
     <ul>
       <li *ngFor="let company of companies">
-        <!-- Display company information -->
-        <p>{{ company.Name }}</p>
-        <p>Address: {{ company.Address || "Address N/A" }}</p>
-        <button
-          [routerLink]="[
-            { outlets: { edit: ['companies', 'edit', company.Id] } }
-          ]"
-        >
-          Edit
-        </button>
-        <button (click)="deleteCompany(company)">Delete</button>
-        <div>
-          <p><a [routerLink]="['/companies/edit', company.Id]">Edit</a></p>
-          <router-outlet></router-outlet>
-          <p><a [routerLink]="['/companies/delete', company.Id]">Delete</a></p>
-        </div>
-        <button
-          [disabled]="company.JobOpenings.length === 0"
-          (click)="toggleJobOpenings(company)"
-          [class]="company.expanded ? 'fas fa-minus' : 'fas fa-plus'"
-        >
-          Job openings
-        </button>
-
-        <div>
-          <router-outlet name="edit"></router-outlet>
-        </div>
-        <!-- Job openings for the current company -->
-        <div class="company-details" *ngIf="company.expanded">
-          <ul>
-            <li *ngFor="let jobOpening of company.JobOpenings">
-              <h4>{{ jobOpening.Title }}</h4>
-              <p>Description: {{ jobOpening.Description }}</p>
-              <p>Active: {{ jobOpening.IsActive ? "Yes" : "No" }}</p>
-              <div style="display: block; padding: 5px">
-                <p>
-                  <a [routerLink]="['/jobopenings/edit', jobOpening.Id]">Edit</a>
-                </p>
-                <button
-                  [disabled]="company.JobOpenings.length === 0"
-                  (click)="editJobOpening(jobOpening)"
-                >
-                  Edit
-                </button>
-                <button
-                  [disabled]="company.JobOpenings.length === 0"
-                  (click)="deleteJobOpening(jobOpening)"
-                >
-                  Delete
-                </button>
-              </div>
-            </li>
-          </ul>
-        </div>
+        <app-company-details [companyItem]="company" [editMode]="true" [jobCount]="company.JobOpenings.length"></app-company-details>
       </li>
     </ul>
-  </div>
+  </div> 
 </div>

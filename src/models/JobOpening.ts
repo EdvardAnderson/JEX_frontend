@@ -4,5 +4,9 @@ export class JobOpening {
         public Title: string,
         public Description: string,
         public IsActive:boolean
-    ) { }
+    ) {
+        this.editMode = false
+
+     }
+     editMode:boolean;
 }

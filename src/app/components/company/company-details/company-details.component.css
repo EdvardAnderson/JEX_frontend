@@ -1,3 +1,22 @@
+.button-group{
+    display:block;
+    padding:0 0 10px 0px;
+}
+
+.button-group button{
+    float: left;
+    background-color: steelblue;
+    border: 2px solid aliceblue;
+    color:aliceblue;
+    margin-right: auto;
+    margin-left: 0px;
+}
+.companies{
+    padding: 10px 20px 20px 10px;
+    
+    border-radius: 5%;
+}
+
 li, i{
     padding: 5px;
     margin: 5px;
@@ -6,7 +25,20 @@ li, i{
     background-color: steelblue;
     color: aliceblue;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
+i{
+    font-weight: normal;
+    margin-left: auto;
+}
+p{
+    display:block;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: steelblue;
+  color: aliceblue;
 }
 
 .scroll-container {

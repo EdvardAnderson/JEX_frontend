@@ -48,23 +48,7 @@
             <input type="checkbox" name="isActive" [(ngModel)]="jobOpening.IsActive" id="isActive">
             
           </div>
-          <div *ngIf="1>2">
-              <div>
-                  <p>Add a new jobopening</p>
-                </div>
-              <div class="form-group">
-                  <label for="title">Title</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="title"
-                    [(ngModel)]="jobOpening.Title"
-                    name="title"
-                    #title="ngModel"/>
-                    </div>
-          </div>
-          
-  
+         
           <button
             type="submit"
             class="btn btn-success"
@@ -73,7 +57,6 @@
   
         <div *ngIf="submitted">
           <h4>You submitted successfully</h4>
-          <!-- <button class="btn btn-success" (click)="newCompany()">Add</button> -->
         </div>
       </div>
     </form>
@@ -96,9 +79,6 @@
         <div class="col-xs-9">{{ jobOpening.CompanyId }}</div>
       </div>
       <br />
-      <button type="button" class="btn btn-primary" (click)="submitted = false">
-        Edit
-      </button>
     </div>
   </div>
   

@@ -10,16 +10,23 @@ import { EditJobopeningComponent } from './components/jobopenings/edit-jobopenin
 
 const routes: Routes = [
   {path: 'companies', component: ListCompaniesComponent},
-  {
-    path: 'companies/edit/:id',
-    component: CompanyEditComponent,
-    outlet: 'edit', // Use a named router outlet
-  },
+//   children:[
+//     {
+//       path: 'edit/:id', component: CompanyDetailsComponent
+//     }
+//   ]
+
+// },
+  // { path: 'companies/edit/:id',component: CompanyEditComponent,
+  //   outlet: 'edit', // Use a named router outlet
+  // },
+
+  {path: 'companies/edit/:id', component:CompanyEditComponent},
   { path: 'addCompany', component: AddCompanyComponent },
   { path: 'addJobOpening', component: AddJobopeningComponent },
   { path: 'manageCompanies', component: ManageCompanyComponent },
-  { path: 'company/:id', component: CompanyDetailsComponent },
-  { path: 'jobopenings/edit/:id', component: EditJobopeningComponent }
+  { path: 'company/:id', component: CompanyDetailsComponent , outlet: 'editCompany'},
+  { path: 'jobopenings/edit/:id', component: EditJobopeningComponent } //route from jobopening=> edit
          
 ];
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Company } from 'src/models/Company';
 import { ApiService } from 'src/app/api-service.service';
 import { Router,ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { JobOpening } from 'src/models/JobOpening';
   styleUrls: ['./manage.component.css']
 })
 export class ManageCompanyComponent implements OnInit {
-
+    
   constructor(private apiService: ApiService, private router: Router) { }
   companies: Company[] = [];
   ngOnInit(): void {
@@ -32,19 +32,10 @@ export class ManageCompanyComponent implements OnInit {
     this.router.navigate(['/jobopenings/edit', jobOpening]);
   }
 
-  deleteJobOpening(jobOpening: JobOpening) {
-    
-  }
-
   editCompany(company: Company){
     console.log('routing', company.Name, 'to companies/edit')
     //this.router.navigate(['companies/edit', company.Id]);
   }
 
-  deleteCompany(company: Company){}
-  // editCompany(company: Company): void {
-  //   // Implement the logic for editing the company here.
-  //   this.router.navigate(['/companies/edit', company.Id]);
-  // }
 
 }

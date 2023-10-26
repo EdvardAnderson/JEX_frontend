@@ -1,11 +1,19 @@
-<div style="width: 400px; margin: auto" class="companies">
-    <div *ngIf="jobOpenings" class="scroll-container">
-        <ul>
-          <li *ngFor="let item of jobOpenings">
-            <p>Job title: {{ item.Title }} </p>
-            <p>description:</p>
-            <span>{{item.Description}}</span>
-          </li>
-        </ul>
+<div style="width: 100%; margin: auto" class="companies">
+    <!-- Display company information -->
+    <p>{{ companyItem.Name }}</p>
+    <p>{{ companyItem.Address || "Address N/A" }}</p>
+    <div *ngIf="editMode">
+      <div class="button-group">
+        <button (click)="editCompany(companyItem.Id)">Edit</button>
+        <button  (click)="deleteCompany(companyItem.Id)">Delete</button>
       </div>
+    </div>
+    <i  (click)="companyItem.JobOpenings.length > 0 ? toggleCompanyDetails(company) : navigateAddJobOpening()" [class]="company.expanded ? 'fas fa-minus' : 'fas fa-plus'">{{companyItem.JobOpenings.length >0 ? 'See jobopenings ' : 'Add jobopening'}}</i>
+    <div>
+      <router-outlet name="editCompany"></router-outlet>
+    </div>
+    <!-- Job openings for the current company -->
+    <div class="company-details" *ngIf="company.expanded">
+      <app-jobopening-details [companyJobs]="companyItem" [editMode]="editMode"/>
+  </div>
 </div>

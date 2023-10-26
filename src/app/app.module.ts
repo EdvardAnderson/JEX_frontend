@@ -13,6 +13,7 @@ import { AddJobopeningComponent } from './components/company/add-jobopening/add-
 import { ManageCompanyComponent } from './components/company/manage/manage.component';
 import { CompanyEditComponent } from './components/company/company-edit/company-edit.component';
 import { EditJobopeningComponent } from './components/jobopenings/edit-jobopening/edit-jobopening.component';
+import { JobopeningDetailsComponent } from './components/jobopenings/jobopening-details/jobopening-details.component';
 
 @NgModule({
   declarations: [ 
@@ -23,7 +24,8 @@ import { EditJobopeningComponent } from './components/jobopenings/edit-jobopenin
     AddJobopeningComponent,
     ManageCompanyComponent,
     CompanyEditComponent,
-    EditJobopeningComponent
+    EditJobopeningComponent,
+    JobopeningDetailsComponent
   ],
   imports: [
     FormsModule,
