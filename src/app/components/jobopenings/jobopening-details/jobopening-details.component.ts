@@ -17,13 +17,7 @@ export class JobopeningDetailsComponent {
   @Input() editMode: boolean = false;
 
   editJobOpening(job: JobOpening) {
-
     this.router.navigate(['jobopenings/edit/', job.Id]);
-    // this.apiService.updateJobOpening(job).subscribe({
-    //   next: (result:JobOpening) => console.log('edit jobOpening', result),
-    //   error: (e) => console.error('Error:', e),
-    //   complete: () => console.info('edit jobopening call completed.')
-    // })
   }
 
   deleteJobOpening(id: any) {
@@ -31,7 +25,7 @@ export class JobopeningDetailsComponent {
     this.apiService.deleteJobOpening(id).subscribe({
       next: (result: JobOpening) => console.log('edit jobOpening', result),
       error: (e) => console.error('Error:', e),
-      complete: () => console.info('edit jobopening call completed.')
+      
 
     })
     this.router.navigate(['/manageCompanies']);

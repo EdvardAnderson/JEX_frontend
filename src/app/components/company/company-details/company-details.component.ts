@@ -43,7 +43,9 @@ export class CompanyDetailsComponent implements OnInit {
     console.log(this.editMode)
     //const id = this.route.snapshot.params['id'];
     console.log(id); 
-    this.router.navigate(['/companies/edit', id]);
+    this.router.navigate(['/companies/edit', id]).then(() => {
+      window.location.reload();
+    });;
   }
 
   deleteCompany(id: any){
@@ -54,7 +56,9 @@ export class CompanyDetailsComponent implements OnInit {
         error: (e) => console.error('Error:', e),
         complete: () => console.info('GetCompanies call completed.')
       });
-      this.router.navigate(['/manageCompanies']);
+      this.router.navigate(['/manageCompanies']).then(() => {
+        window.location.reload();
+      });;
 
   }
 }

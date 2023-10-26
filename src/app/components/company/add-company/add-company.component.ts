@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from 'src/app/api-service.service';
 import { Company } from 'src/models/Company';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-company',
@@ -8,6 +9,7 @@ import { Company } from 'src/models/Company';
   styleUrls: ['./add-company.component.css']
 })
 export class AddCompanyComponent {
+
   company = {
     name:'',
     address:'',
@@ -27,7 +29,7 @@ export class AddCompanyComponent {
   //   this.submitted = true; }
 
   //DI with api service
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   createCompany(): void {
     console.log(this.company);
@@ -35,15 +37,18 @@ export class AddCompanyComponent {
       
     };
     console.log('incoming data', this.company);
-    this.apiService.createCompany(this.company)
-      .subscribe(
-        response => {
-          console.log(response);
-          this.submitted = true;
-        },
-        error => {
-          console.log('ERROR TERROR', error);
-        });
+    setTimeout(() => {
+      this.apiService.createCompany(this.company).subscribe({
+        next: (response:any) =>console.log(response),
+        error: (e) => console.error(e),
+        complete: ()=> 
+          //console.log('company creation completed')
+          this.submitted = true
+    })
+      // Navigate to your desired route after the delay
+      this.router.navigate(['/manageCompanies']);
+    }, 1000); // 1000ms = 1 second
+
   }
 
 }

@@ -6,6 +6,7 @@
       <div class="button-group">
         <button (click)="editCompany(companyItem.Id)">Edit</button>
         <button  (click)="deleteCompany(companyItem.Id)">Delete</button>
+        <button  (click)="navigateAddJobOpening()">Add jobopening</button>
       </div>
     </div>
     <i  (click)="companyItem.JobOpenings.length > 0 ? toggleCompanyDetails(company) : navigateAddJobOpening()" [class]="company.expanded ? 'fas fa-minus' : 'fas fa-plus'">{{companyItem.JobOpenings.length >0 ? 'See jobopenings ' : 'Add jobopening'}}</i>

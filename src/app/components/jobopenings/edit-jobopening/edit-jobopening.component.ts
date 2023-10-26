@@ -29,6 +29,6 @@ export class EditJobopeningComponent {
 onSubmit(){
   this.apiService.updateJobOpening(this.jobOpening).subscribe((data: any)=> console.log('update result:', data));
   
-  this.router.navigate(['/manageCompanies/']);
+  this.router.navigate(['/manageCompanies/']).then(()=>window.location.reload());
 }
 }

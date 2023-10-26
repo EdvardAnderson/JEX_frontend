@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Company } from 'src/models/Company';
 import { ApiService } from 'src/app/api-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-company-edit',
@@ -14,6 +15,7 @@ import { ApiService } from 'src/app/api-service.service';
   
     constructor(
       private route: ActivatedRoute,
+      private router: Router,
       private apiService: ApiService
     ) {}
   
@@ -24,6 +26,6 @@ import { ApiService } from 'src/app/api-service.service';
   
     onSubmit() {
       this.apiService.updateCompany(this.company).subscribe((data: any)=> console.log('update result:', data));
-      
+      this.router.navigate(['/manageCompanies']).then(()=>window.location.reload());
     }
 }
