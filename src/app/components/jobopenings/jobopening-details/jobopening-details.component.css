@@ -1,0 +1,24 @@
+li{
+    padding: 5px;
+    margin: 5px;
+    border: 2px aliceblue solid;
+    display: block;
+    background-color: steelblue;
+    color: aliceblue;
+    font-weight: bold;
+
+}
+
+.button-group{
+    display:block;
+    padding:0 0 10px 0px;
+}
+
+.button-group toggle, button{
+   
+    background-color: steelblue;
+    border: 2px solid aliceblue;
+    color:aliceblue;
+    margin-right: 10px;
+    margin-left: 0px;
+}

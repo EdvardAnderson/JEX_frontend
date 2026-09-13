@@ -1,0 +1,19 @@
+<div style="width: 400px; margin: auto" class="companies">
+  <p>Companies</p>
+  <ng-container *ngIf="companies.length>0; then jobs; else noJobs"></ng-container>
+  
+  <ng-template #jobs>
+  <div class="scroll-container">
+    <ul>
+      <li *ngFor="let company of companies">
+        <app-company-details [companyItem]="company"></app-company-details>
+      </li>
+    </ul>
+  </div>
+  </ng-template>
+  <ng-template #noJobs>
+    <div>
+      <span>No active job openings found for any company</span>
+    </div>
+  </ng-template>
+</div>

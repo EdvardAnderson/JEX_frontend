@@ -1,0 +1,24 @@
+p{
+    padding: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: steelblue;
+    color: aliceblue;
+}
+
+input {
+    display: block;
+}
+
+.btn{
+    margin: 5px 0px 5px 0px;
+    background-color: steelblue;
+    border: 2px aliceblue solid;
+    color: aliceblue;
+}
+.submit-form{
+    color: aliceblue;
+    font-weight:bold ;
+    padding: 10px;
+    background-color: steelblue;
+}

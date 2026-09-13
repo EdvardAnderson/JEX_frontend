@@ -1,0 +1,10 @@
+<div style="width: 400px; margin: auto" class="companies">
+  <p>Manage companies and jobopenings</p>
+  <div *ngIf="companies" class="scroll-container">
+    <ul>
+      <li *ngFor="let company of companies">
+        <app-company-details [companyItem]="company" [editMode]="true" [jobCount]="company.JobOpenings.length"></app-company-details>
+      </li>
+    </ul>
+  </div> 
+</div>
