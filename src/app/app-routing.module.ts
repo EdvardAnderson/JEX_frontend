@@ -9,29 +9,32 @@ import { CompanyEditComponent } from './components/company/company-edit/company-
 import { EditJobopeningComponent } from './components/jobopenings/edit-jobopening/edit-jobopening.component';
 
 const routes: Routes = [
-  {path: 'companies', component: ListCompaniesComponent},
-//   children:[
-//     {
-//       path: 'edit/:id', component: CompanyDetailsComponent
-//     }
-//   ]
+  { path: 'companies', component: ListCompaniesComponent },
+  //   children:[
+  //     {
+  //       path: 'edit/:id', component: CompanyDetailsComponent
+  //     }
+  //   ]
 
-// },
+  // },
   // { path: 'companies/edit/:id',component: CompanyEditComponent,
   //   outlet: 'edit', // Use a named router outlet
   // },
 
-  {path: 'companies/edit/:id', component:CompanyEditComponent},
+  { path: 'companies/edit/:id', component: CompanyEditComponent },
   { path: 'addCompany', component: AddCompanyComponent },
   { path: 'addJobOpening', component: AddJobopeningComponent },
   { path: 'manageCompanies', component: ManageCompanyComponent },
-  { path: 'company/:id', component: CompanyDetailsComponent , outlet: 'editCompany'},
-  { path: 'jobopenings/edit/:id', component: EditJobopeningComponent } //route from jobopening=> edit
-         
+  {
+    path: 'company/:id',
+    component: CompanyDetailsComponent,
+    outlet: 'editCompany',
+  },
+  { path: 'jobopenings/edit/:id', component: EditJobopeningComponent }, //route from jobopening=> edit
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
